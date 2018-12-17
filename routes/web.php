@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\Admin;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
