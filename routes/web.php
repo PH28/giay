@@ -10,9 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Http\Controllers\Admin;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+route::get('Admin',[
+'as'=>'trangchu', 
+'uses'=>'AdminController@index'
+]);
+
+route::get('dangnhap',[
+	'as'=>'login', 
+	'uses'=>'AdminController@show'
+]);

@@ -21,6 +21,6 @@ class Oder extends Model
     }
 
     public function orders_detail(){
-    	return $this->hasMany('App\Order_detail','orders_id','id');
+    	return $this->hasMany('App\OrderDetail','order_id','id');
     } 	
 }

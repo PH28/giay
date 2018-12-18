@@ -1,21 +1,17 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Users;
 
-class UsersTableSeeder extends Seeder
+class UserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    protected $users = [
-        'phone'=>'Integer',
-    ];
     public function run()
     {
-        DB::table('users')->insert([
+         DB::table('users')->insert([
             ['id'=>1,
                 'name'=>"admin",
                 'email'=>"admin@gmail.com",
@@ -30,6 +26,16 @@ class UsersTableSeeder extends Seeder
                 'phone'=>"01223539732",
                 'address'=>"Quang Ngai",
                 'user_type'=>0],
+            [
+                'id'=>3,
+                'name'=>"An",
+                'email'=>"an@gmail.com",
+                'password'=>bcrypt("123456"),
+                'phone'=>"0122353973",
+                'address'=>"Quang Ngai",
+                'user_type'=>0
+            ]    
+
             
         ]);
 

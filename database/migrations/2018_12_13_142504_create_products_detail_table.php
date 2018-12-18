@@ -15,8 +15,8 @@ class CreateProductsDetailTable extends Migration
     {
         Schema::create('products_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('products_id')->unsigned();
-            $table->foreign('products_id')->references('id')->on('products');
+            $table->integer('product_id')->unsigned()->nullable();
+            $table->foreign('product_id')->references('id')->on('products');
             $table->text('color');
             $table->text('size');
             $table->timestamps();

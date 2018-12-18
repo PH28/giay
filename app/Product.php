@@ -13,22 +13,22 @@ class Product extends Model
     	'image',
     	'price',
     	'quantity',
-    	'categories_id'
+    	'category_id'
     ];
 
     public function orders_detail(){
-    	return $this->hasMany('App\Order_detail','products_id','id');
+    	return $this->hasMany('App\OrderDetail','product_id','id');
     }
 
     public function comments(){
-    	return $this->hasMany('App\Comment','products_id','id');
+    	return $this->hasMany('App\Comment','product_id','id');
     }
 
     public function categories(){
-    	return $this->belongsTo('App\Category','categories_id','id');
+    	return $this->belongsTo('App\Category','category_id','id');
     }
 
     public function products_detail(){
-    	return $this->hasMany('App\Product_detail','products_id','id');
+    	return $this->hasMany('App\Product_detail','product_id','id');
     }
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CategoriesTableSeeder extends Seeder
+class CategoryTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,24 +11,24 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
+         DB::table('categories')->insert([
         	[
 	        	'id'=>1,
 	        	'name'=>'Giày Sneaker',
-	        	'parent_id'=>1
+	        	
 	        ],	
 
 	        [
 	        	'id'=>2,
 	        	'name'=>'Giày Cổ Cao ',
-	        	'parent_id'=>2
+	        	
 	        ],
 
 	        [
 	        	'id'=>3,
 	        	'name'=>'Giày Thể Thao',
-	        	'parent_id'=>3
-	        ],
+	        	
+	        ]
         ]);
     }
 }
