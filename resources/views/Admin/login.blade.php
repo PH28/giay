@@ -39,13 +39,8 @@
                                     <input class="form-control" placeholder="email" name="email" type="email" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="password" name="password" type="password" value="">
                                 </div>
-                                <div>
-                                    <input type="checkbox" name="remember" value="Ghi nhớ"  >
-                                    Ghi nhớ mật khẩu
-                                </div>
-                
                                 <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
                             </fieldset>
                         </form>

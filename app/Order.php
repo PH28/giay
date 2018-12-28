@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Oder extends Model
+class Order extends Model
 {
     protected $table = 'orders';
     protected $fillable = [
     	'user_id',
+        'receiver_name',
     	'total',
     	'date',
     	'phone',

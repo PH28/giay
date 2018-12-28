@@ -34,9 +34,9 @@ class AdminRequest extends FormRequest
         return[
             'email.required'=>'Vui lòng nhập email',
                 'email.email'=>'Email không đúng định dạng',
-                'password.required'=>'Vui lòng nhập mật khẩu',
-                'password.min'=>'Mật khẩu phải có ít nhất 6 ký tự',
-                'password.max'=>'Độ dài mật khẩu tối đa 40 ký tự'
+                'password.required'=>'Vui lòng nhập mật khẩu'
+                
+                
             ];
      }
 }

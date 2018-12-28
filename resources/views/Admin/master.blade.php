@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
+    <base href="{{asset('')}}">
     <title>Admin</title>
 
     <!-- Bootstrap Core CSS -->
@@ -31,7 +32,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        @include('admin.header')
+        @include('Admin.header')
 
        @yield('content')
 
@@ -62,6 +63,8 @@
         });
     });
     </script>
+
+    @yield('script')
 </body>
 
 </html>
