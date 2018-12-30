@@ -15,27 +15,27 @@
                                 {{$err}}<br>
                             @endforeach
                         </div> 
-                     @endif
+                    @endif
                     @if(session('thongbao'))
                         <div class="alert alert-success">
                             {{session('thongbao')}}
                             
                         </div>
                     @endif               
-                            <form action="{{route('category.add')}}" method="POST">
+                            <form action="{{route('category.create')}}" method="POST">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 
                                 <!-- <label>Category parent</label>
                                 <select class="form-control" name="parent_id">
                                       <option value="">Chọn thể loại</option>
-                                      @foreach($parent as $item)
+                                      @foreach($category as $item)
                                         <option value="{{$item->id}}">{{$item["name"]}}</option>  
                                       @endforeach  
                                 </select> -->
                                     
                                 <div class="form-group">
                                         <label>Tên</label>
-                                    <input class="form-control" name="CategoryName" placeholder="Nhập Tên " >
+                                    <input class="form-control" name="name" placeholder="Nhập Tên " >
                                 </div>
 
                                 

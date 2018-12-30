@@ -4,57 +4,59 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
-use App\validator;
+
 class CategoryController extends Controller
 {
-    public function getlist(){
-    	$Category = Category::all();
-    	return view('Admin.category.list_category',compact('Category'));
+    public function index(){
+    	$category = Category::all();
+    	return view('Admin.category.list_category',compact('category'));
     }
-     public function getadd(){
-          // $parent = Category::all();
-     	return view('Admin.category.add_category',compact('parent'));
+     public function create(){
+          $category = Category::all();
+     	return view('Admin.category.add_category',compact('category'));
      }
 
-     public function postadd(Request $request){
+     public function store(Request $request){
      	$this->validate($request,
      		[
-     			"CategoryName"=>"required|unique:categories,name",
+     			"name"=>"required|unique:categories,name",
      		],
      		[
-     			"CategoryName.required"=>"Bạn chưa nhập tên",
-     			"CategoryName.unique"=>"Tên Thể Loại Đã Tồn Tại",
+     			"name.required"=>"Bạn chưa nhập tên",
+     			"name.unique"=>"Tên Thể Loại Đã Tồn Tại",
      		]);
-     	$Category            = new Category;
-     	$Category->name      = $request->CategoryName;
-          // $Category->parent_id = $request->parent_id;
-     	$Category->save();
-     	return redirect(route('category.add'))->with('thongbao','Thêm Thành Công') ;
+     	$category            = new Category;
+     	$category->name      = $request->name;
+          // $category->parent_id = $request->parent_id;
+     	$category->save();
+
+     	return redirect()->route('category.create')->with('thongbao','Thêm Thành Công') ;
      }
 
-     public function getedit($id){
-     	$Category = Category::find($id);
-     	return view('Admin.category.edit_category',compact('Category'));
+     public function edit($id){
+     	$category = Category::find($id);
+     	return view('Admin.category.edit_category',compact('category'));
      }
 
-     public function postedit(Request $request,$id){
+     public function update(Request $request,$id){
      	$this->validate($request,
      		[
-     			"CategoryName"=>"required|unique:categories,name",
+     			"name"=>"required|unique:categories,name",
      		],
      		[
-     			"CategoryName.required"=>"Bạn chưa nhập tên",
-     			"CategoryName.unique"=>"Tên Thể Loại Đã Tồn Tại",
+     			"name.required"=>"Bạn chưa nhập tên",
+     			"name"=>"Tên Thể Loại Đã Tồn Tại",
      		]);
-     	$Category = Category::find($id);
-     	$Category->name = $request->CategoryName;
-     	$Category->save();
-     	return redirect()->route('category.edit',$Category->id)->with('thongbao','Sửa thành công');
+     	$category = Category::find($id);
+     	$category->name = $request->name;
+     	$category->save();
+     	return redirect()->route('category.edit',$category->id)->with('thongbao','Sửa thành công');
+
      }
 
-     public function getdelete($id){
-     	$Category = Category::find($id);
-     	$Category->delete();
-     	return redirect(route('category.list'))->with('thongbao','Bạn đã xóa thành công');
+     public function delete($id){
+     	$category = Category::find($id);
+     	$category->delete();
+     	return redirect()->route('category.index')->with('thongbao','Bạn đã xóa thành công');
      }
 }

@@ -21,16 +21,16 @@
                                 <!-- <th>Category Parents</th> -->
                                 <th>Delete</th>
                                 <th>Edit</th>
-                            </tr>
+                            </tr>s
                         </thead>
                         <tbody>
-                            @foreach($Category as $tl)
+                            @foreach($category as $ca)
                                 <tr class="even gradeC" align="center">
-                                    <td>{{$tl->id}}</td>
-                                    <td>{{$tl->name}}</td>
-                                    <!-- <td>{{$tl->parent_id}}</td> -->
-                                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return confirm('Bạn có muốn xóa không')" href="{{route('category.delete',$tl->id)}}">Xóa</a></td>
-                                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('category.edit',$tl->id)}}">Edit</a></td>
+                                    <td>{{$ca->id}}</td>
+                                    <td>{{$ca->name}}</td>
+                                    <!-- <td>{{$ca->parent_id}}</td> -->
+                                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return confirm('Bạn có muốn xóa không')" href="{{route('category.delete',$ca->id)}}">Xóa</a></td>
+                                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('category.edit',$ca->id)}}">Edit</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

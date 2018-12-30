@@ -16,7 +16,7 @@ class Product extends Model
     	'category_id'
     ];
 
-    public function orders_detail(){
+    public function orderdetails(){
     	return $this->hasMany('App\OrderDetail','product_id','id');
     }
 
@@ -24,11 +24,11 @@ class Product extends Model
     	return $this->hasMany('App\Comment','product_id','id');
     }
 
-    public function categories(){
+    public function category(){
     	return $this->belongsTo('App\Category','category_id','id');
     }
 
-    public function products_detail(){
+    public function productdetails(){
     	return $this->hasMany('App\Product_detail','product_id','id');
     }
 }

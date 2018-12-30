@@ -32,35 +32,35 @@ Route::post('dangnhap',[
 Route::group(['prefix'=>'admin'],function(){
 	
 	Route::group(['prefix'=>'category'],function(){
-		Route::get('list','CategoryController@getlist')->name('category.list');
-		Route::get('add','CategoryController@getadd')->name('category.add');
-		Route::post('add','CategoryController@postadd')->name('category.add');
-		Route::get('edit/{id}','CategoryController@getedit')->name('category.edit');
-		Route::post('edit/{id}','CategoryController@postedit')->name('category.edit');
-		Route::get('delete/{id}','CategoryController@getdelete')->name('category.delete');
+		Route::get('/','CategoryController@index')->name('category.index');
+		Route::get('create','CategoryController@create')->name('category.create');
+		Route::post('/','CategoryController@store')->name('category.store');
+		Route::get('{id}/edit','CategoryController@edit')->name('category.edit');
+		Route::post('{id}/update','CategoryController@update')->name('category.update');
+		Route::get('delete/{id}','CategoryController@delete')->name('category.delete');
 	});
 
 	Route::group(['prefix'=>'user'],function(){
-		Route::get('list','UserController@getlist')->name('user.list');
-		Route::get('add','UserController@getadd')->name('user.add');
-		Route::post('add','UserController@postadd')->name('user.add');
-		Route::get('edit/{id}','UserController@getedit')->name('user.edit');
-		Route::post('edit/{id}','UserController@postedit')->name('user.edit');
-		Route::get('delete/{id}','UserController@getdelete')->name('user.delete');
+		Route::get('/','UserController@index')->name('user.index');
+		Route::get('create','UserController@create')->name('user.create');
+		Route::post('/','UserController@store')->name('user.store');
+		Route::get('{id}/edit','UserController@edit')->name('user.edit');
+		Route::post('{id}/update','UserController@update')->name('user.update');
+		Route::get('delete/{id}','UserController@delete')->name('user.delete');
 	});
 
 	Route::group(['prefix'=>'product'],function(){
-		Route::get('list','ProductController@getlist')->name('product.list');
-		Route::get('add','ProductController@getadd')->name('product.add');
-		Route::post('add','ProductController@postadd')->name('product.add');
-		Route::get('edit/{id}','ProductController@getedit')->name('product.edit');
-		Route::post('edit/{id}','ProductController@postedit')->name('product.edit');
-		Route::get('delete/{id}','ProductController@getdelete')->name('product.delete');
+		Route::get('/','ProductController@index')->name('product.index');
+		Route::get('create','ProductController@create')->name('product.create');
+		Route::post('/','ProductController@store')->name('product.store');
+		Route::get('{id}/edit','ProductController@edit')->name('product.edit');
+		Route::post('{id}/update','ProductController@update')->name('product.update');
+		Route::get('delete/{id}','ProductController@delete')->name('product.delete');
 	});
 
 	Route::group(['prefix'=>'order'],function(){
-		Route::get('list','OrderController@getlist')->name('order.list');
-		Route::get('add','OrderController@getadd')->name('order.add');
+		Route::get('/','OrderController@index')->name('order.index');
+		Route::get('create','OrderController@create')->name('order.create');
 		Route::get('detail/{id}', 'OrderController@getdetail')->name('order.detail');
 		Route::get('delete/{id}', 'OrderController@getdelete')->name('order.delete');
 	});

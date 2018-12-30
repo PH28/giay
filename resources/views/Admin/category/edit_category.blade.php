@@ -23,15 +23,16 @@
                             
                         </div>
                     @endif               
-                        <form action="{{route('category.edit',$Category->id)}}" method="POST">
+                        <form action="{{route('category.edit',$category->id)}}" method="POST">
                              <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
                                 <label>Tên</label>
-                                <input class="form-control" name="CategoryName" placeholder="Nhập tên thương hiệu" value="{{$Category->name}}" >
+                                <input class="form-control" name="name" placeholder="Nhập tên thương hiệu" value="{{$category->name}}" >
                             </div>
                             
                             <button type="submit" class="btn btn-default">Sửa</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
+                           
                         <form>
                     </div>
                 </div>

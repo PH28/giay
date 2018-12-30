@@ -20,28 +20,28 @@
                                 {{session('thongbao')}}
                             </div>
                         @endif    
-                             <form  action="{{route('product.edit',$Product->id)}}" method="POST" enctype="multipart/form-data" role="form">
+                             <form  action="{{route('product.edit',$product->id)}}" method="POST" enctype="multipart/form-data" role="form">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     
                                  
                                     
                                     <div class="form-group">
                                         <label>Tên Sản Phẩm:</label>
-                                        <input class="form-control" name="name"  value="{{$Product->name}}"/>
+                                        <input class="form-control" name="name"  value="{{$product->name}}"/>
                                     </div>
                                     <div class="form-group">
                                         <label>Giá sản phẩm:</label>
-                                        <input class="form-control" name="price"  value="{{$Product->price}}"/>
+                                        <input class="form-control" name="price"  value="{{$product->price}}"/>
                                     </div>
                                     <div class="form-group">
                                         <label>Mô Tả:</label>
-                                        <input class="form-control" type="text" name="content" value="{{$Product->content}}"/>
-                                        {{--<textarea class="form-control" rows="10"  name="content" placeholder="{{$Product->content}}"></textarea>--}}
+                                        <input class="form-control" type="text" name="content" value="{{$product->content}}"/>
+                                        {{--<textarea class="form-control" rows="10"  name="content" placeholder="{{$product->content}}"></textarea>--}}
                                     </div>
                                     <div class="form-group">
                                         <label>Hình ảnh hiện tại:</label><br>
-                                        <img  src="{!! asset('images/'.$Product['image']) !!}" alt="">
-                                        <input type="hidden" value="{!! $Product['image'] !!}}"/>
+                                        <img  src="{!! asset('images/'.$product['image']) !!}" alt="">
+                                        <input type="hidden" value="{!! $product['image'] !!}}"/>
                                     </div>
                                     <div class="form-group">
                                         <label>Hình ảnh:</label>
@@ -50,15 +50,15 @@
                                     <div class="form-group">
                                         <label>Loại sản phẩm:</label>
                                         <select class="form-control" name="category">
-                                            @foreach ($Category as $br) :?>
-                                            <option  value="{{$br->id}}">{{$br->name}}</option>
+                                            @foreach ($category as $ca) :?>
+                                            <option  value="{{$ca->id}}">{{$ca->name}}</option>
                                              @endforeach
                                         </select>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label>Số lượng:</label>
-                                        <input class="form-control" name="quantity" value="{{$Product->quantity}}"  />
+                                        <input class="form-control" name="quantity" value="{{$product->quantity}}"  />
                                     </div>
                                     
                                     <button type="submit" class="btn btn-default">Cập nhật</button>

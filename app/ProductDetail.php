@@ -13,7 +13,7 @@ class ProductDetail extends Model
     	'product_id',
     ];
 
-    public function products(){
+    public function product(){
     	return $this->belongsTo('App\Product','product_id','id');
     }
 }
