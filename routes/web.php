@@ -24,3 +24,7 @@ route::get('dangnhap',[
 	'as'=>'login', 
 	'uses'=>'AdminController@show'
 ]);
+
+route::get('/products','ProductController@index')->name('products.index');
+
+route::get('/products/{product}','ProductController@show')->name('products.show');

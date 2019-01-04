@@ -16,11 +16,11 @@ class Oder extends Model
     	'status',
     ];
 
-    public function users(){
+    public function user(){
     	return $this->belongsTo('App\User','user_id','id');
     }
 
-    public function orders_detail(){
+    public function orders_details(){
     	return $this->hasMany('App\OrderDetail','order_id','id');
     } 	
 }
