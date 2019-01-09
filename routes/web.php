@@ -28,3 +28,7 @@ route::get('dangnhap',[
 route::get('/products','ProductController@index')->name('products.index');
 
 route::get('/products/{product}','ProductController@show')->name('products.show');
+
+route::get('/order/create','OrderController@create')->name('orders.create');
+
+route::post('/products','OrderController@store')->name('orders.store');
